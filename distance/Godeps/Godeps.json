@@ -1,0 +1,30 @@
+{
+	"ImportPath": "github.com/TheGUNNER13/playgound-go/distance",
+	"GoVersion": "go1.9",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/golang/geo/r1",
+			"Rev": "e41ca803f92c4c1770133cfa5b4fc8249a7dbe82"
+		},
+		{
+			"ImportPath": "github.com/golang/geo/r2",
+			"Rev": "e41ca803f92c4c1770133cfa5b4fc8249a7dbe82"
+		},
+		{
+			"ImportPath": "github.com/golang/geo/r3",
+			"Rev": "e41ca803f92c4c1770133cfa5b4fc8249a7dbe82"
+		},
+		{
+			"ImportPath": "github.com/golang/geo/s1",
+			"Rev": "e41ca803f92c4c1770133cfa5b4fc8249a7dbe82"
+		},
+		{
+			"ImportPath": "github.com/golang/geo/s2",
+			"Rev": "e41ca803f92c4c1770133cfa5b4fc8249a7dbe82"
+		}
+	]
+}
