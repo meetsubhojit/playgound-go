@@ -34,7 +34,10 @@ func CreateSiteMap(path string, url *url.URL, links []*url.URL, resBody io.Reade
 		}
 
 		outHtml := fmt.Sprintf(htmlBodyPattern, title, fmt.Sprintf(list, outLinks))
-		ioutil.WriteFile(filepath, []byte(outHtml), 0644)
+		err := ioutil.WriteFile(filepath, []byte(outHtml), 0644)
+		if err != nil {
+			log.Println("Error rendering url ", url.String(), " error : ", err.Error())
+		}
 	}
 }
 func getFullFileName(path string, url *url.URL) string {

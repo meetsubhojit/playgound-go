@@ -12,9 +12,10 @@ import (
 	"time"
 )
 
-var path = "/Users/sdutta/Documents/LBrands/Code/Go/src/github.com/TheGUNNER13/playgound-go/webcrawler/output"
+var path = os.Getenv("GOPATH") + "/src/github.com/TheGUNNER13/playgound-go/webcrawler" + "/output"
 
 //This example starts crawling "http://www.monzo.com"
+//Change the abive path variable if required.
 //This puts in a filter to not crawl external links like facebook, twitter etc, however the consumer used DOES NOT
 // differentiate between internal/external links, so it will list everything given to it by the crawler
 //This also puts in an Operation function which strips the urls of '#'
