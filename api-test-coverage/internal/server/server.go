@@ -8,6 +8,7 @@ import (
 )
 
 func StartServer() {
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 	r.GET("/time", func(ctx *gin.Context) {
 		resp := api.GetTime(ctx)

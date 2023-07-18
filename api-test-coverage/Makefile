@@ -30,6 +30,7 @@ test/bin: ## build the binary for local run
 test/api: test/bin ## runs the binary for local api testing and outputs cover result
 	@mkdir -p $(TEST_REPORT_DIR)
 # 	start the test binary and say where it should output the coverage file
-	@$(TEST_BINARY_PATH) -test.coverprofile $(TEST_API_REPORT) >> /dev/null
+	@$(TEST_BINARY_PATH) -test.coverprofile $(TEST_API_REPORT)
+	@echo "\n\ncoverage report\n"
 #	display the coverage	
 	@go tool cover -func=$(TEST_API_REPORT)
