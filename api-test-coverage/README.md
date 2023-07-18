@@ -4,9 +4,11 @@ We generally write unit tests, and run `go test` with cover flags to visualise t
 Then we run automation suites in frameworks like karate which hits our service's endpoints. Here we care more about the correctness of the response received. However using `go test -c` (an inbuilt utility to build a go binary in "test" mode) we can additionally make our service to emit `unit test` like coverage reports. 
 
 ### how to use this module
-run` make test/api` which will build the binary in "test" mode, and then call a http enpoint that our service exposes. Ultimtely showing the coverage report.
+make sure you navigate to api-test-coverage folder. run `go mod tidy`. 
 
-there are other make commands which builds, runs the binary as a normal server.
+Then run` make test/api` which will build the binary in "test" mode, and then call a http enpoint that our service exposes. Ultimtely showing the coverage report.
+
+There are other make commands which builds, runs the binary as a normal server.
 
 ### internals
 we have written a simple service which exposes a `/time` http endpoint which gives you the current time. On calling `/time` it hits the controller->api->utils pkgs. `internal` package has all our application code.
