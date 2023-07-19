@@ -6,6 +6,8 @@ When we run api or integreation tests, we check the api responses and assess our
 
 Using `go test -c` (an inbuilt utility to build a go binary in "test" mode) we can make our service to emit this coverage. 
 
+![alt text](resources/code-coverage-screenshot.png)
+
 ### how to use this module
 make sure you navigate to api-test-coverage folder. run `go mod tidy`. 
 
