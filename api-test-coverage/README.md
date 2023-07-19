@@ -1,7 +1,10 @@
 # golang api testing with coverage
 
-We generally write unit tests, and run `go test` with cover flags to visualise the coverage our test code has. 
-Then we run automation suites in frameworks like karate which hits our service's endpoints. Here we care more about the correctness of the response received. However using `go test -c` (an inbuilt utility to build a go binary in "test" mode) we can additionally make our service to emit `unit test` like coverage reports. 
+When we run unit test, we run it with `coverage` flag to find out how well our code is covered under the unit tests.
+
+When we run api or integreation tests, we check the api responses and assess our service's overall functionality. While doing this, we can also generate coverage report which can tell us how well our api/integration tests cover our code.
+
+Using `go test -c` (an inbuilt utility to build a go binary in "test" mode) we can make our service to emit this coverage. 
 
 ### how to use this module
 make sure you navigate to api-test-coverage folder. run `go mod tidy`. 
