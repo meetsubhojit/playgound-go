@@ -8,7 +8,7 @@ make sure you navigate to api-test-coverage folder. run `go mod tidy`.
 
 Then run` make test/api` which will build the binary in "test" mode, and then call a http enpoint that our service exposes. Ultimtely showing the coverage report.
 
-There are other make commands which builds, runs the binary as a normal server.
+Checkout the `Makefile` for the commands needed to make it work overall.
 
 ### internals
 we have written a simple service which exposes a `/time` http endpoint which gives you the current time. On calling `/time` it hits the controller->api->utils pkgs. `internal` package has all our application code.
