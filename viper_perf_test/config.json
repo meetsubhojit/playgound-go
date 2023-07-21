@@ -1,0 +1,10 @@
+{
+    "some_string": "a big string here",
+    "some_struct": {
+        "first_field": "some big string",
+        "second_field": 1,
+        "third_field": false
+    },
+    "some_int": 1000000,
+    "some_float": 1.101010101010
+}
