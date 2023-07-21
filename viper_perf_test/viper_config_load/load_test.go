@@ -71,13 +71,46 @@ func checkValuesViaStruct(t interface{}) {
 	}
 }
 
+func checkNestedValues(t interface{}) {
+
+	type logFatal interface {
+		Fatal(args ...any)
+	}
+	b, ok := t.(logFatal)
+	if !ok {
+		panic("input param doesn't support logFatal")
+	}
+
+	if !viper.GetBool("some_struct.third_field") {
+		b.Fatal("some_struct.third_field was supposed to be true")
+	}
+
+}
+
+func checkNestedValuesViaStruct(t interface{}) {
+
+	type logFatal interface {
+		Fatal(args ...any)
+	}
+	b, ok := t.(logFatal)
+	if !ok {
+		panic("input param doesn't support logFatal")
+	}
+
+	if !appConfig.SomeStruct.ThirdField {
+		b.Fatal("appConfig.SomeStruct.ThirdField was supposed to be true")
+	}
+
+}
+
 // func TestCheclValues(t *testing.T) {
 // 	checkValuesViaViper(t)
 // }
 
 // func TestCheckValuesViaStruct(t *testing.T) {
-// 	checkValuesViaStruct(t)
-// 	t.Log(appConfig)
+// 	fmt.Println("appConfig.SomeStruct", appConfig.SomeStruct.ThirdField)
+// 	t.Log("appConfig.SomeStruct", appConfig.SomeStruct)
+// 	checkNestedValuesViaStruct(t)
 // }
 
 func BenchmarkViperGet(b *testing.B) {
@@ -85,8 +118,19 @@ func BenchmarkViperGet(b *testing.B) {
 		checkValuesViaViper(b)
 	}
 }
-func BenchmarkViperGetViaStruct(b *testing.B) {
+func BenchmarkGetViaStruct(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		checkValuesViaStruct(b)
+	}
+}
+
+func BenchmarkViperGetNested(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		checkNestedValues(b)
+	}
+}
+func BenchmarkGetNestedViaStruct(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		checkNestedValuesViaStruct(b)
 	}
 }
