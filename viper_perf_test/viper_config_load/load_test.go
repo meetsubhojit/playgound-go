@@ -19,12 +19,12 @@ func checkValuesViaViper(t interface{}) {
 	if viper.GetString("some_string") != "a big string here" {
 		b.Fatal("some_string key didn't match expected value")
 	}
-	// if viper.GetInt("some_int") != 1000000 {
-	// 	b.Fatal("some_int key didn't match expected value")
-	// }
-	// if viper.GetFloat64("some_float") != 1.101010101010 {
-	// 	b.Fatal("some_float key didn't match expected value")
-	// }
+	if viper.GetInt("some_int") != 1000000 {
+		b.Fatal("some_int key didn't match expected value")
+	}
+	if viper.GetFloat64("some_float") != 1.101010101010 {
+		b.Fatal("some_float key didn't match expected value")
+	}
 }
 
 type Config struct {
@@ -63,12 +63,12 @@ func checkValuesViaStruct(t interface{}) {
 	if appConfig.SomeString != "a big string here" {
 		b.Fatal("some_string key didn't match expected value")
 	}
-	// if appConfig.SomeInt != 1000000 {
-	// 	b.Fatal("some_int key didn't match expected value")
-	// }
-	// if appConfig.SomeFloat != 1.101010101010 {
-	// 	b.Fatal("some_float key didn't match expected value")
-	// }
+	if appConfig.SomeInt != 1000000 {
+		b.Fatal("some_int key didn't match expected value")
+	}
+	if appConfig.SomeFloat != 1.101010101010 {
+		b.Fatal("some_float key didn't match expected value")
+	}
 }
 
 // func TestCheclValues(t *testing.T) {
